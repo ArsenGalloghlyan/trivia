@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { Option } from '../types/dropdown';
-import { Question } from '../types/trivia';
+import { Round } from '../types/trivia';
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +10,10 @@ import { Question } from '../types/trivia';
 export class CoreService {
   private httpClient: HttpClient = inject(HttpClient);
 
-  public getQuestions(categoryId: number): Observable<Question[]> {
+  public getQuestions(categoryId: number): Observable<Round[]> {
     return this.httpClient
       .get<{
-        results: Question[];
+        results: Round[];
       }>(
         `https://opentdb.com/api.php?amount=10&category=${categoryId}&type=boolean`,
       )

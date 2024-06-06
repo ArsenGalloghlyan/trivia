@@ -1,1 +1,11 @@
-<p>rounds works!</p>
+<div class="rounds">
+  <div class="rounds-slider" [style.transform]="translate">
+    @for (round of rounds$ | async; track round) {
+      <app-round
+        [round]="round"
+        (handleSelect)="handleSelect($event)"
+        [roundNumber]="roundNumber + 1"
+      ></app-round>
+    }
+  </div>
+</div>

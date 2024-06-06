@@ -1,0 +1,20 @@
+@if (round) {
+  <div class="round">
+    <h2 class="round-number">Questions {{ roundNumber }}</h2>
+    <app-round-difficulty
+      [difficulty]="round.difficulty"
+    ></app-round-difficulty>
+    <h3 class="round-question" [innerHTML]="round.question"></h3>
+    <div class="round-answers">
+      @for (
+        answer of round.correct_answer | roundAnswer: round.incorrect_answers;
+        track answer
+      ) {
+        <app-round-answer
+          [answer]="answer"
+          (handleClick)="handleSelect.emit(answer)"
+        ></app-round-answer>
+      }
+    </div>
+  </div>
+}

@@ -1,7 +1,7 @@
 export type BooleanAnswer = 'True' | 'False';
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
-export interface Question {
+export interface Round {
   type: string;
   difficulty: Difficulty;
   category: string;

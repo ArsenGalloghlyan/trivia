@@ -8,9 +8,10 @@
       (select)="handleSelect($event)"
     ></app-dropdown>
     <button
+      class="home-button"
       mat-flat-button
       color="primary"
-      [disabled]="!selectedOption"
+      [disabled]="!selectedCategoryId"
       (click)="handleStartButtonClick()"
     >
       Start

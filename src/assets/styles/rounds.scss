@@ -1,0 +1,15 @@
+.rounds {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  justify-content: start;
+  align-items: stretch;
+
+  &-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    transition: transform 0.3s;
+    will-change: transform;
+  }
+}

@@ -18,15 +18,16 @@ export class HomeComponent implements OnInit {
   private coreService: CoreService = inject(CoreService);
   private router: Router = inject(Router);
   public categories$: Observable<Option[]> = this.coreService.getCategories();
-  public selectedOption?: number;
+  public selectedCategoryId?: number;
 
   public handleSelect(categoryId: number): void {
-    this.selectedOption = categoryId;
+    console.log(categoryId);
+    this.selectedCategoryId = categoryId;
   }
 
   ngOnInit(): void {}
 
   public handleStartButtonClick(): void {
-    this.router.navigateByUrl(`rounds/${this.selectedOption}`);
+    this.router.navigateByUrl(`rounds/${this.selectedCategoryId}`);
   }
 }

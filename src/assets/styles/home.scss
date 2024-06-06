@@ -8,12 +8,14 @@
   &-content {
     display: flex;
     flex-direction: column;
+    min-width: 300px;
+    text-align: center;
   }
 
   &-title {
     margin-bottom: 50px;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 40px;
     line-height: 75px;
     color: #3a7859;
   }
@@ -23,5 +25,9 @@
     line-height: 45px;
     color: #354153;
     margin-bottom: 20px;
+  }
+
+  &-button {
+    margin-top: 50px;
   }
 }

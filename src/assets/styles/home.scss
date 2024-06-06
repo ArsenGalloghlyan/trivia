@@ -1,0 +1,27 @@
+.home {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  $self: &;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 75px;
+    color: #3a7859;
+  }
+
+  &-sub-title {
+    font-size: 30px;
+    line-height: 45px;
+    color: #354153;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="home">
+  <div class="home-content">
+    <h2 class="home-title">Trivia App</h2>
+    <h3 class="home-sub-title">Pick a Category</h3>
+    <app-dropdown
+      label="Category"
+      [options]="(categories$ | async) || []"
+      (select)="handleSelect($event)"
+    ></app-dropdown>
+    <button
+      mat-flat-button
+      color="primary"
+      [disabled]="!selectedOption"
+      (click)="handleStartButtonClick()"
+    >
+      Start
+    </button>
+  </div>
+</div>

@@ -1,4 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { DisplayColumns } from '../../../types/scoreboard';
 import {
   MatCell,
@@ -30,6 +35,7 @@ import {
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent<T> implements OnInit {
   @Input({ required: true }) dataSource!: T[];

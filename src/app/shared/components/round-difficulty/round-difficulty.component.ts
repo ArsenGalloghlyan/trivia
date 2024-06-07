@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Difficulty } from '../../../types/trivia';
 
 @Component({
@@ -7,6 +7,7 @@ import { Difficulty } from '../../../types/trivia';
   imports: [],
   templateUrl: './round-difficulty.component.html',
   styleUrl: './round-difficulty.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RoundDifficultyComponent {
   @Input() difficulty?: Difficulty;

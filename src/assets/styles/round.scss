@@ -10,6 +10,7 @@
 
   &-number {
     margin-bottom: 50px;
+    margin-top: 75px;
     color: #3a7859;
     font-size: 40px;
     font-weight: 700;
@@ -20,9 +21,11 @@
   &-question {
     margin-top: 50px;
     margin-bottom: 50px;
-    font-size: 20px;
     color: #354153;
     text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 45px;
   }
 
   &-answers {

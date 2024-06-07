@@ -7,14 +7,15 @@
       [options]="(categories$ | async) || []"
       (select)="handleSelect($event)"
     ></app-dropdown>
-    <button
-      class="home-button"
-      mat-flat-button
-      color="primary"
-      [disabled]="!selectedCategoryId"
-      (click)="handleStartButtonClick()"
-    >
-      Start
-    </button>
+    <div class="home-button">
+      <button
+        mat-flat-button
+        color="primary"
+        [disabled]="!selectedCategoryId"
+        (click)="handleStartButtonClick()"
+      >
+        Start
+      </button>
+    </div>
   </div>
 </div>

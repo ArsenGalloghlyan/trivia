@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CoreService } from '../../services/core.service';
 import { RoundComponent } from '../round/round.component';
 import { Round, UserAnswer } from '../../types/trivia';
-import { Observable, switchMap } from 'rxjs';
+import { finalize, Observable, switchMap } from 'rxjs';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { MatButton } from '@angular/material/button';
 import { RoundService } from '../../services/round.service';
@@ -13,6 +13,7 @@ import {
   ROUNDS_COUNT,
   TRANSLATE_INITIAL_VALUE,
 } from '../../helpers/constants';
+import { LoaderService } from '../../services/loader.service';
 
 @Component({
   selector: 'app-rounds',
@@ -26,16 +27,22 @@ export class RoundsComponent {
   private router: Router = inject(Router);
   private coreService: CoreService = inject(CoreService);
   private roundService: RoundService = inject(RoundService);
+  private loaderService: LoaderService = inject(LoaderService);
   private localStorageService: LocalStorageService =
     inject(LocalStorageService);
   public roundNumber: number = 0;
   public rounds$: Observable<Round[]> = this.getRound();
-  public translate = TRANSLATE_INITIAL_VALUE;
+  public translate: string = TRANSLATE_INITIAL_VALUE;
   public currentSliderIndex: number = 0;
 
   public getRound(): Observable<Round[]> {
+    this.loaderService.changeState(true);
     return this.route.params.pipe(
-      switchMap(({ id }) => this.coreService.getQuestions(id)),
+      switchMap(({ id }) =>
+        this.coreService
+          .getQuestions(id)
+          .pipe(finalize(() => this.loaderService.changeState(false))),
+      ),
     );
   }
 

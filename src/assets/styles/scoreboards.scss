@@ -1,0 +1,22 @@
+.scoreboards {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+
+  &-title {
+    font-size: 25px;
+    color: #3a7859;
+    text-align: center;
+  }
+
+  &-button {
+    text-align: center;
+  }
+}
+
+.scoreboard {
+  &-score {
+    margin-bottom: 0;
+    padding-left: 15px;
+  }
+}

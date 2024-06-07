@@ -1,1 +1,8 @@
 <router-outlet></router-outlet>
+@if (isLoading) {
+  <div class="loader">
+    <div class="loader-content">
+      <mat-spinner></mat-spinner>
+    </div>
+  </div>
+}

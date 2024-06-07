@@ -1,11 +1,23 @@
-<div class="rounds">
-  <div class="rounds-slider" [style.transform]="translate">
-    @for (round of rounds$ | async; track round) {
-      <app-round
-        [round]="round"
-        (handleSelect)="handleSelect($event)"
-        [roundNumber]="roundNumber + 1"
-      ></app-round>
-    }
-  </div>
+<div class="rounds" *ngIf="rounds$ | async as rounds">
+  <ng-container *ngIf="rounds.length; else noResult">
+    <div class="rounds-slider" [style.transform]="translate">
+      @for (round of rounds; track round) {
+        <app-round
+          [round]="round"
+          (handleSelect)="handleSelect()"
+          [roundNumber]="roundNumber + 1"
+        ></app-round>
+      }
+    </div>
+  </ng-container>
+  <ng-template #noResult>
+    <div class="rounds-no-result">
+      <h3 class="rounds-no-result-text">
+        Currently there is no data by this category
+      </h3>
+      <button mat-flat-button color="error" (click)="handleReturnHome()">
+        Back To Home
+      </button>
+    </div>
+  </ng-template>
 </div>

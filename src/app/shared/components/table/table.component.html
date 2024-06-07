@@ -1,0 +1,22 @@
+<div class="table">
+  <div class="table-wrapper">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      @for (
+        column of displayedColumns;
+        track column.field;
+        let index = $index
+      ) {
+        <ng-container matColumnDef="{{ column.field }}">
+          <th mat-header-cell *matHeaderCellDef>{{ column.displayName }}</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element[column.field] }}
+          </td>
+        </ng-container>
+      }
+      @if (columnFields) {
+        <tr mat-header-row *matHeaderRowDef="columnFields"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnFields"></tr>
+      }
+    </table>
+  </div>
+</div>

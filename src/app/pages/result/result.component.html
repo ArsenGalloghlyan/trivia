@@ -1,1 +1,17 @@
-<p>result works!</p>
+<div class="result">
+  <h2 class="result-title">Thank You</h2>
+  <h3 class="result-score" *ngIf="params$ | async as param">
+    Your Score: {{ param.correctAnswers }} / {{ param.roundsCount }}
+  </h3>
+  <button
+    mat-stroked-button
+    color="primary"
+    class="result-button"
+    [routerLink]="'/scoreboard'"
+  >
+    View Scoreboard
+  </button>
+  <button mat-flat-button color="primary" class="result-button" routerLink="/">
+    Back To Home
+  </button>
+</div>

@@ -5,10 +5,11 @@ import { RouterOutlet } from '@angular/router';
 import { AppRoutingModule } from './app.routing.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
+import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterOutlet, AppRoutingModule],
+  imports: [BrowserModule, RouterOutlet, AppRoutingModule, MatProgressSpinner],
   bootstrap: [AppComponent],
   providers: [provideAnimationsAsync(), provideHttpClient()],
 })

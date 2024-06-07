@@ -1,0 +1,10 @@
+.table {
+  padding: 15px;
+
+  &-wrapper {
+    border: 1px solid #3a7859;
+    border-radius: 15px;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+}

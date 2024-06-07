@@ -14,6 +14,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/result/result.component').then((m) => m.ResultComponent),
   },
+  {
+    path: 'scoreboard',
+    loadComponent: () =>
+      import('./pages/scoreboards/scoreboards.component').then(
+        (m) => m.ScoreboardsComponent,
+      ),
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

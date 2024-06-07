@@ -1,0 +1,14 @@
+<div class="scoreboards">
+  <h3 class="scoreboards-title">Results of played games</h3>
+  <div class="scoreboards-button">
+    <button mat-stroked-button color="error" routerLink="/">
+      Back To Home
+    </button>
+  </div>
+  @for (userAnswer of userAnswers; track userAnswer) {
+    <app-scoreboard
+      [userAnswers]="userAnswer"
+      [columns]="columns"
+    ></app-scoreboard>
+  }
+</div>

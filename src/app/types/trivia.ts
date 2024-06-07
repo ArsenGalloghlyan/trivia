@@ -9,3 +9,8 @@ export interface Round {
   correct_answer: BooleanAnswer;
   incorrect_answers: BooleanAnswer[];
 }
+
+export interface UserAnswer extends Round {
+  userAnswer: BooleanAnswer;
+  is_answered_correct: boolean;
+}

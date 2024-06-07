@@ -1,6 +1,6 @@
 @if (round) {
   <div class="round">
-    <h2 class="round-number">Questions {{ roundNumber }}</h2>
+    <h2 class="round-number">Question {{ roundNumber }}</h2>
     <app-round-difficulty
       [difficulty]="round.difficulty"
     ></app-round-difficulty>
@@ -12,7 +12,7 @@
       ) {
         <app-round-answer
           [answer]="answer"
-          (handleClick)="handleSelect.emit(answer)"
+          (handleClick)="handleAnswerSelect(answer)"
         ></app-round-answer>
       }
     </div>

@@ -1,0 +1,9 @@
+<div class="scoreboard">
+  @if (dataSource) {
+    <h4 class="scoreboard-score">Score: {{ dataSource | userScore }}</h4>
+    <app-table
+      [displayedColumns]="columns"
+      [dataSource]="dataSource"
+    ></app-table>
+  }
+</div>

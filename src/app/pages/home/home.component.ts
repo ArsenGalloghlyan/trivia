@@ -29,11 +29,9 @@ export class HomeComponent {
 
   private getCategories$(): Observable<Option[]> {
     this.loaderService.changeState(true);
-    return this.coreService.getCategories().pipe(
-      finalize(() => {
-        this.loaderService.changeState(false);
-      }),
-    );
+    return this.coreService
+      .getCategories()
+      .pipe(finalize(() => this.loaderService.changeState(false)));
   }
 
   public handleStartButtonClick(): void {

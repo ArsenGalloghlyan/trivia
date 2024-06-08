@@ -22,13 +22,11 @@ export class ScoreboardComponent implements OnInit {
   }
 
   private initDataSource(): void {
-    this.dataSource = this.userAnswers.map((ua) => {
-      return {
-        question: ua.question,
-        correctAnswer: ua.correct_answer,
-        userAnswer: ua.userAnswer,
-        point: ua.userAnswer === ua.correct_answer ? 1 : 0,
-      };
-    });
+    this.dataSource = this.userAnswers.map((ua) => ({
+      question: ua.question,
+      correctAnswer: ua.correct_answer,
+      userAnswer: ua.userAnswer,
+      point: ua.userAnswer === ua.correct_answer ? 1 : 0,
+    }));
   }
 }

@@ -7,6 +7,11 @@ import {
 } from '@angular/material/dialog';
 import { MatButton } from '@angular/material/button';
 
+interface DialogData {
+  title: string;
+  content: string;
+}
+
 @Component({
   selector: 'app-dialog',
   standalone: true,
@@ -21,6 +26,6 @@ import { MatButton } from '@angular/material/button';
   styleUrl: './dialog.component.scss',
 })
 export class DialogComponent {
-  @Input() data?: any;
+  @Input() data?: DialogData;
   @Output() handleClose: EventEmitter<void> = new EventEmitter<void>();
 }

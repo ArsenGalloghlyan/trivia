@@ -47,7 +47,7 @@ export class RoundsComponent {
   }
 
   public handleSelect(): void {
-    if (this.roundNumber < 9) {
+    if (this.roundNumber < ROUNDS_COUNT - 1) {
       ++this.roundNumber;
       this.currentSliderIndex += 1;
       this.translate = `translate3d(${this.currentSliderIndex * -100}%, 0, 0)`;
